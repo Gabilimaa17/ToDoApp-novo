@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; 
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView} from 'react-native';
 
 export default function App() {
   const [tarefaAtual, setTarefaAtual] = useState('');
@@ -28,11 +28,12 @@ export default function App() {
       </View>
 
       
-      {listaTarefas.map((item, index) => (
+      <ScrollView>{listaTarefas.map((item, index) => (
         <View key={index} style={styles.card}>
           <Text>{item}</Text>
-        </View>
+        </View> 
       ))}
+      </ScrollView>
     </View>
   );
 }
