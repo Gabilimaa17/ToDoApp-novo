@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react'; 
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 export default function App() {
+  
+  const [count, setCount] = useState(0);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Minhas Tarefas</Text>
-
+      <Text style={styles.titulo}>Minhas Anotações: {count}</Text>
       <View style={styles.linha}>
         <TextInput 
           style={styles.caixa} 
           placeholder="Digite a anotação..." 
         />
-        <TouchableOpacity style={styles.botao}>
+        <TouchableOpacity style={styles.botao} onPress={() => setCount(count + 1)}>
           <Text style={styles.mais}>+</Text>
         </TouchableOpacity>
       </View>
